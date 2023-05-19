@@ -1,6 +1,6 @@
 from os.path import isdir
 from custom_pathlib import BuildDir
-from custom_pathlib.structure import DISTRIBUTED_STRUCTURE
+# from custom_pathlib.structure import DISTRIBUTED_STRUCTURE
 from argparse import ArgumentParser
 
 if __name__ == '__main__':
@@ -30,7 +30,10 @@ if __name__ == '__main__':
         path = input('Choose a valid directory: ')
 
     # Create BuildDir object and call bdir.tree with command-line arguments
-    bdir = BuildDir(path=path, struct=DISTRIBUTED_STRUCTURE)
+    bdir = BuildDir(
+        path=path,
+        # struct=DISTRIBUTED_STRUCTURE
+    )
     bdir.tree(
         level=args.level,
         show_abs_path=bool(args.show_abs_path),
