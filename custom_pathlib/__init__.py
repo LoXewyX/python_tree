@@ -46,7 +46,7 @@ class BuildDir:
             for i, path in enumerate(contents):
                 if path.is_dir():
                     pointer = self._tee_dir if i < num_contents - 1 else self._last_dir
-                    yield prefix+pointer+path.name+Path.sep
+                    yield prefix+pointer+path.name+sep
                     directories += 1
                     extension = self._branch if pointer == self._tee_dir else self._space
                     yield from inner(path, prefix=prefix+extension, level=level-1, index=i)
